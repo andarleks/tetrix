@@ -1,0 +1,594 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6A5E3FC025B4B607005532BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5E3FBF25B4B607005532BD /* AppDelegate.swift */; };
+		6A5E3FC225B4B607005532BD /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6A5E3FC125B4B607005532BD /* GameScene.sks */; };
+		6A5E3FC425B4B607005532BD /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6A5E3FC325B4B607005532BD /* Actions.sks */; };
+		6A5E3FC625B4B607005532BD /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5E3FC525B4B607005532BD /* GameScene.swift */; };
+		6A5E3FC825B4B607005532BD /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5E3FC725B4B607005532BD /* GameViewController.swift */; };
+		6A5E3FCB25B4B607005532BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A5E3FC925B4B607005532BD /* Main.storyboard */; };
+		6A5E3FCD25B4B608005532BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A5E3FCC25B4B608005532BD /* Assets.xcassets */; };
+		6A5E3FD825B4B609005532BD /* TetrixGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5E3FD725B4B609005532BD /* TetrixGameTests.swift */; };
+		6A5E3FE325B4B609005532BD /* TetrixGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5E3FE225B4B609005532BD /* TetrixGameUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6A5E3FD425B4B609005532BD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6A5E3FB425B4B607005532BD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6A5E3FBB25B4B607005532BD;
+			remoteInfo = TetrixGame;
+		};
+		6A5E3FDF25B4B609005532BD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6A5E3FB425B4B607005532BD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6A5E3FBB25B4B607005532BD;
+			remoteInfo = TetrixGame;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6A5E3FBC25B4B607005532BD /* TetrixGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TetrixGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A5E3FBF25B4B607005532BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6A5E3FC125B4B607005532BD /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		6A5E3FC325B4B607005532BD /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
+		6A5E3FC525B4B607005532BD /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		6A5E3FC725B4B607005532BD /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		6A5E3FCA25B4B607005532BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6A5E3FCC25B4B608005532BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6A5E3FCE25B4B608005532BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6A5E3FD325B4B609005532BD /* TetrixGameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TetrixGameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A5E3FD725B4B609005532BD /* TetrixGameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TetrixGameTests.swift; sourceTree = "<group>"; };
+		6A5E3FD925B4B609005532BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6A5E3FDE25B4B609005532BD /* TetrixGameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TetrixGameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A5E3FE225B4B609005532BD /* TetrixGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TetrixGameUITests.swift; sourceTree = "<group>"; };
+		6A5E3FE425B4B609005532BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6A5E3FB925B4B607005532BD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A5E3FD025B4B609005532BD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A5E3FDB25B4B609005532BD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6A5E3FB325B4B607005532BD = {
+			isa = PBXGroup;
+			children = (
+				6A5E3FBE25B4B607005532BD /* TetrixGame */,
+				6A5E3FD625B4B609005532BD /* TetrixGameTests */,
+				6A5E3FE125B4B609005532BD /* TetrixGameUITests */,
+				6A5E3FBD25B4B607005532BD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6A5E3FBD25B4B607005532BD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6A5E3FBC25B4B607005532BD /* TetrixGame.app */,
+				6A5E3FD325B4B609005532BD /* TetrixGameTests.xctest */,
+				6A5E3FDE25B4B609005532BD /* TetrixGameUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6A5E3FBE25B4B607005532BD /* TetrixGame */ = {
+			isa = PBXGroup;
+			children = (
+				6A5E3FBF25B4B607005532BD /* AppDelegate.swift */,
+				6A5E3FC125B4B607005532BD /* GameScene.sks */,
+				6A5E3FC325B4B607005532BD /* Actions.sks */,
+				6A5E3FC525B4B607005532BD /* GameScene.swift */,
+				6A5E3FC725B4B607005532BD /* GameViewController.swift */,
+				6A5E3FC925B4B607005532BD /* Main.storyboard */,
+				6A5E3FCC25B4B608005532BD /* Assets.xcassets */,
+				6A5E3FCE25B4B608005532BD /* Info.plist */,
+			);
+			path = TetrixGame;
+			sourceTree = "<group>";
+		};
+		6A5E3FD625B4B609005532BD /* TetrixGameTests */ = {
+			isa = PBXGroup;
+			children = (
+				6A5E3FD725B4B609005532BD /* TetrixGameTests.swift */,
+				6A5E3FD925B4B609005532BD /* Info.plist */,
+			);
+			path = TetrixGameTests;
+			sourceTree = "<group>";
+		};
+		6A5E3FE125B4B609005532BD /* TetrixGameUITests */ = {
+			isa = PBXGroup;
+			children = (
+				6A5E3FE225B4B609005532BD /* TetrixGameUITests.swift */,
+				6A5E3FE425B4B609005532BD /* Info.plist */,
+			);
+			path = TetrixGameUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6A5E3FBB25B4B607005532BD /* TetrixGame */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6A5E3FE725B4B609005532BD /* Build configuration list for PBXNativeTarget "TetrixGame" */;
+			buildPhases = (
+				6A5E3FB825B4B607005532BD /* Sources */,
+				6A5E3FB925B4B607005532BD /* Frameworks */,
+				6A5E3FBA25B4B607005532BD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TetrixGame;
+			productName = TetrixGame;
+			productReference = 6A5E3FBC25B4B607005532BD /* TetrixGame.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6A5E3FD225B4B609005532BD /* TetrixGameTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6A5E3FEA25B4B609005532BD /* Build configuration list for PBXNativeTarget "TetrixGameTests" */;
+			buildPhases = (
+				6A5E3FCF25B4B609005532BD /* Sources */,
+				6A5E3FD025B4B609005532BD /* Frameworks */,
+				6A5E3FD125B4B609005532BD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6A5E3FD525B4B609005532BD /* PBXTargetDependency */,
+			);
+			name = TetrixGameTests;
+			productName = TetrixGameTests;
+			productReference = 6A5E3FD325B4B609005532BD /* TetrixGameTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6A5E3FDD25B4B609005532BD /* TetrixGameUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6A5E3FED25B4B609005532BD /* Build configuration list for PBXNativeTarget "TetrixGameUITests" */;
+			buildPhases = (
+				6A5E3FDA25B4B609005532BD /* Sources */,
+				6A5E3FDB25B4B609005532BD /* Frameworks */,
+				6A5E3FDC25B4B609005532BD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6A5E3FE025B4B609005532BD /* PBXTargetDependency */,
+			);
+			name = TetrixGameUITests;
+			productName = TetrixGameUITests;
+			productReference = 6A5E3FDE25B4B609005532BD /* TetrixGameUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6A5E3FB425B4B607005532BD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1230;
+				LastUpgradeCheck = 1230;
+				TargetAttributes = {
+					6A5E3FBB25B4B607005532BD = {
+						CreatedOnToolsVersion = 12.3;
+					};
+					6A5E3FD225B4B609005532BD = {
+						CreatedOnToolsVersion = 12.3;
+						TestTargetID = 6A5E3FBB25B4B607005532BD;
+					};
+					6A5E3FDD25B4B609005532BD = {
+						CreatedOnToolsVersion = 12.3;
+						TestTargetID = 6A5E3FBB25B4B607005532BD;
+					};
+				};
+			};
+			buildConfigurationList = 6A5E3FB725B4B607005532BD /* Build configuration list for PBXProject "TetrixGame" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6A5E3FB325B4B607005532BD;
+			productRefGroup = 6A5E3FBD25B4B607005532BD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6A5E3FBB25B4B607005532BD /* TetrixGame */,
+				6A5E3FD225B4B609005532BD /* TetrixGameTests */,
+				6A5E3FDD25B4B609005532BD /* TetrixGameUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6A5E3FBA25B4B607005532BD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A5E3FCB25B4B607005532BD /* Main.storyboard in Resources */,
+				6A5E3FC225B4B607005532BD /* GameScene.sks in Resources */,
+				6A5E3FCD25B4B608005532BD /* Assets.xcassets in Resources */,
+				6A5E3FC425B4B607005532BD /* Actions.sks in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A5E3FD125B4B609005532BD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A5E3FDC25B4B609005532BD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6A5E3FB825B4B607005532BD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A5E3FC625B4B607005532BD /* GameScene.swift in Sources */,
+				6A5E3FC825B4B607005532BD /* GameViewController.swift in Sources */,
+				6A5E3FC025B4B607005532BD /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A5E3FCF25B4B609005532BD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A5E3FD825B4B609005532BD /* TetrixGameTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A5E3FDA25B4B609005532BD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A5E3FE325B4B609005532BD /* TetrixGameUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6A5E3FD525B4B609005532BD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6A5E3FBB25B4B607005532BD /* TetrixGame */;
+			targetProxy = 6A5E3FD425B4B609005532BD /* PBXContainerItemProxy */;
+		};
+		6A5E3FE025B4B609005532BD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6A5E3FBB25B4B607005532BD /* TetrixGame */;
+			targetProxy = 6A5E3FDF25B4B609005532BD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6A5E3FC925B4B607005532BD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6A5E3FCA25B4B607005532BD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6A5E3FE525B4B609005532BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6A5E3FE625B4B609005532BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6A5E3FE825B4B609005532BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RYWZ7KB4EQ;
+				INFOPLIST_FILE = TetrixGame/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.vokagames.TetrixGame;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6A5E3FE925B4B609005532BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RYWZ7KB4EQ;
+				INFOPLIST_FILE = TetrixGame/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.vokagames.TetrixGame;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		6A5E3FEB25B4B609005532BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RYWZ7KB4EQ;
+				INFOPLIST_FILE = TetrixGameTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.vokagames.TetrixGameTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TetrixGame.app/TetrixGame";
+			};
+			name = Debug;
+		};
+		6A5E3FEC25B4B609005532BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RYWZ7KB4EQ;
+				INFOPLIST_FILE = TetrixGameTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.vokagames.TetrixGameTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TetrixGame.app/TetrixGame";
+			};
+			name = Release;
+		};
+		6A5E3FEE25B4B609005532BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RYWZ7KB4EQ;
+				INFOPLIST_FILE = TetrixGameUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.vokagames.TetrixGameUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TetrixGame;
+			};
+			name = Debug;
+		};
+		6A5E3FEF25B4B609005532BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RYWZ7KB4EQ;
+				INFOPLIST_FILE = TetrixGameUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.vokagames.TetrixGameUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TetrixGame;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6A5E3FB725B4B607005532BD /* Build configuration list for PBXProject "TetrixGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A5E3FE525B4B609005532BD /* Debug */,
+				6A5E3FE625B4B609005532BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6A5E3FE725B4B609005532BD /* Build configuration list for PBXNativeTarget "TetrixGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A5E3FE825B4B609005532BD /* Debug */,
+				6A5E3FE925B4B609005532BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6A5E3FEA25B4B609005532BD /* Build configuration list for PBXNativeTarget "TetrixGameTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A5E3FEB25B4B609005532BD /* Debug */,
+				6A5E3FEC25B4B609005532BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6A5E3FED25B4B609005532BD /* Build configuration list for PBXNativeTarget "TetrixGameUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A5E3FEE25B4B609005532BD /* Debug */,
+				6A5E3FEF25B4B609005532BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6A5E3FB425B4B607005532BD /* Project object */;
+}
