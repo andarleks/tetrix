@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		6A5E3FC025B4B607005532BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5E3FBF25B4B607005532BD /* AppDelegate.swift */; };
-		6A5E3FC225B4B607005532BD /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6A5E3FC125B4B607005532BD /* GameScene.sks */; };
 		6A5E3FC425B4B607005532BD /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6A5E3FC325B4B607005532BD /* Actions.sks */; };
 		6A5E3FC625B4B607005532BD /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5E3FC525B4B607005532BD /* GameScene.swift */; };
 		6A5E3FC825B4B607005532BD /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5E3FC725B4B607005532BD /* GameViewController.swift */; };
@@ -16,6 +15,10 @@
 		6A5E3FCD25B4B608005532BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A5E3FCC25B4B608005532BD /* Assets.xcassets */; };
 		6A5E3FD825B4B609005532BD /* TetrixGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5E3FD725B4B609005532BD /* TetrixGameTests.swift */; };
 		6A5E3FE325B4B609005532BD /* TetrixGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5E3FE225B4B609005532BD /* TetrixGameUITests.swift */; };
+		6ACD712825B4BAB000CA6F5E /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = 6ACD712725B4BAB000CA6F5E /* Sounds */; };
+		6ACD712D25B4BABB00CA6F5E /* Sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 6ACD712C25B4BABB00CA6F5E /* Sprites.atlas */; };
+		6ACD713225B4BCEB00CA6F5E /* Array2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACD713125B4BCEB00CA6F5E /* Array2D.swift */; };
+		6AE2430F25E137BB001BE85E /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE2430E25E137BB001BE85E /* Block.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +41,6 @@
 /* Begin PBXFileReference section */
 		6A5E3FBC25B4B607005532BD /* TetrixGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TetrixGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A5E3FBF25B4B607005532BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6A5E3FC125B4B607005532BD /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		6A5E3FC325B4B607005532BD /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		6A5E3FC525B4B607005532BD /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		6A5E3FC725B4B607005532BD /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -51,6 +53,10 @@
 		6A5E3FDE25B4B609005532BD /* TetrixGameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TetrixGameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A5E3FE225B4B609005532BD /* TetrixGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TetrixGameUITests.swift; sourceTree = "<group>"; };
 		6A5E3FE425B4B609005532BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6ACD712725B4BAB000CA6F5E /* Sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sounds; sourceTree = "<group>"; };
+		6ACD712C25B4BABB00CA6F5E /* Sprites.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Sprites.atlas; sourceTree = "<group>"; };
+		6ACD713125B4BCEB00CA6F5E /* Array2D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array2D.swift; sourceTree = "<group>"; };
+		6AE2430E25E137BB001BE85E /* Block.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,14 +107,14 @@
 		6A5E3FBE25B4B607005532BD /* TetrixGame */ = {
 			isa = PBXGroup;
 			children = (
-				6A5E3FBF25B4B607005532BD /* AppDelegate.swift */,
-				6A5E3FC125B4B607005532BD /* GameScene.sks */,
-				6A5E3FC325B4B607005532BD /* Actions.sks */,
+				6A5E3FCC25B4B608005532BD /* Assets.xcassets */,
+				6ACD713725B4BD2E00CA6F5E /* Resources */,
+				6ACD713625B4BD0B00CA6F5E /* Supporting Files */,
+				6ACD713125B4BCEB00CA6F5E /* Array2D.swift */,
+				6A5E3FCE25B4B608005532BD /* Info.plist */,
 				6A5E3FC525B4B607005532BD /* GameScene.swift */,
 				6A5E3FC725B4B607005532BD /* GameViewController.swift */,
-				6A5E3FC925B4B607005532BD /* Main.storyboard */,
-				6A5E3FCC25B4B608005532BD /* Assets.xcassets */,
-				6A5E3FCE25B4B608005532BD /* Info.plist */,
+				6AE2430E25E137BB001BE85E /* Block.swift */,
 			);
 			path = TetrixGame;
 			sourceTree = "<group>";
@@ -129,6 +135,25 @@
 				6A5E3FE425B4B609005532BD /* Info.plist */,
 			);
 			path = TetrixGameUITests;
+			sourceTree = "<group>";
+		};
+		6ACD713625B4BD0B00CA6F5E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6A5E3FBF25B4B607005532BD /* AppDelegate.swift */,
+				6A5E3FC325B4B607005532BD /* Actions.sks */,
+				6A5E3FC925B4B607005532BD /* Main.storyboard */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6ACD713725B4BD2E00CA6F5E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6ACD712725B4BAB000CA6F5E /* Sounds */,
+				6ACD712C25B4BABB00CA6F5E /* Sprites.atlas */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,9 +260,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A5E3FCB25B4B607005532BD /* Main.storyboard in Resources */,
-				6A5E3FC225B4B607005532BD /* GameScene.sks in Resources */,
 				6A5E3FCD25B4B608005532BD /* Assets.xcassets in Resources */,
+				6ACD712825B4BAB000CA6F5E /* Sounds in Resources */,
 				6A5E3FC425B4B607005532BD /* Actions.sks in Resources */,
+				6ACD712D25B4BABB00CA6F5E /* Sprites.atlas in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +289,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A5E3FC625B4B607005532BD /* GameScene.swift in Sources */,
+				6ACD713225B4BCEB00CA6F5E /* Array2D.swift in Sources */,
+				6AE2430F25E137BB001BE85E /* Block.swift in Sources */,
 				6A5E3FC825B4B607005532BD /* GameViewController.swift in Sources */,
 				6A5E3FC025B4B607005532BD /* AppDelegate.swift in Sources */,
 			);
