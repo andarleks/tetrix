@@ -18,7 +18,7 @@ enum Orientation: Int, CustomStringConvertible {
     
     static func random() -> Orientation {
         
-        return Orientation(rawValue: (0...Orientation.numberOfOrientations).randomElement()!)! // force unwrapping can't fail - all static predefined values
+        return Orientation(rawValue: (0..<Orientation.numberOfOrientations).randomElement()!)! // force unwrapping can't fail - all static predefined values
     }
     
     static func rotate(orientation: Orientation, clockwise: Bool) -> Orientation {
@@ -53,7 +53,7 @@ enum Orientation: Int, CustomStringConvertible {
 
 class Shape: Hashable, CustomStringConvertible {
     
-    let numberOfShapeTypes = 7
+    static let numberOfShapeTypes = 7
     
     let firstBlockIndex = 0
     let secondBlockIndex = 1
@@ -115,6 +115,93 @@ class Shape: Hashable, CustomStringConvertible {
             let newBlock = Block(column: blockColumn, row: blockRow, color: color)
             
             blocks.append(newBlock)
+        }
+    }
+    
+    final func rotateBlocks(orientation: Orientation) {
+        
+        guard let blockRowColumnTranslations: Array<(columnDiff: Int, rowDiff: Int)> = blockRowColumnPositions[orientation] else { return }
+        
+        blockRowColumnTranslations.enumerated().forEach { (index, columnRowDiff) in
+            
+            let (columnDiff, rowDiff) = columnRowDiff
+            
+            blocks[index].column = column + columnDiff
+            blocks[index].row = row + rowDiff
+        }
+    }
+    
+    final func rotateClockwise() {
+        
+        let newOrientation = Orientation.rotate(orientation: orientation, clockwise: true)
+        
+        rotateBlocks(orientation: newOrientation)
+        
+        orientation = newOrientation
+    }
+    
+    final func rotateCounterClockwise() {
+        
+        let newOrientation = Orientation.rotate(orientation: orientation, clockwise: false)
+        
+        rotateBlocks(orientation: newOrientation)
+        
+        orientation = newOrientation
+    }
+    
+    final func lowerShapeByOneRow() {
+        
+        shiftBy(columns: 0, rows: 1)
+    }
+    
+    final func raiseShapeByOneRow() {
+        
+        shiftBy(columns: 0, rows: -1)
+    }
+    
+    final func shiftRightByOneColumn() {
+        
+        shiftBy(columns: 1, rows: 0)
+    }
+    
+    final func shiftLeftByOneColumn() {
+        
+        shiftBy(columns: -1, rows: 0)
+    }
+
+    final func shiftBy(columns: Int, rows: Int) {
+        
+        self.column += columns
+        self.row += rows
+        
+        rotateBlocks(orientation: orientation)
+    }
+    
+    final func moveTo(column: Int, row: Int) {
+        
+        self.column = column
+        self.row = row
+        
+        rotateBlocks(orientation: orientation)
+    }
+
+    final class func random(startingColumn: Int, startingRow: Int) -> Shape {
+        
+        switch (0...numberOfShapeTypes).randomElement() {
+        case 0:
+            return SquareShape(column: startingColumn, row: startingRow)
+        case 1:
+            return LineShape(column: startingColumn, row: startingRow)
+        case 2:
+            return TShape(column: startingColumn, row: startingRow)
+        case 3:
+            return SShape(column: startingColumn, row: startingRow)
+        case 4:
+            return ZShape(column: startingColumn, row: startingRow)
+        case 5:
+            return LShape(column: startingColumn, row: startingRow)
+        default:
+            return JShape(column: startingColumn, row: startingRow)
         }
     }
     

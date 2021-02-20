@@ -38,7 +38,7 @@ enum BlockColor: Int, CustomStringConvertible {
     
     static func random() -> BlockColor {
         
-        return BlockColor(rawValue: (0...BlockColor.numberOfColors).randomElement()!)! // force unwrapping can't fail - all static predefined values
+        return BlockColor(rawValue: (0..<BlockColor.numberOfColors).randomElement()!)! // force unwrapping can't fail - all static predefined values
     }
     
     // MARK: - CustomStringConvertible

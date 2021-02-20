@@ -23,6 +23,7 @@
 		6A5FE00425E1B118001E0131 /* JShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5FE00325E1B118001E0131 /* JShape.swift */; };
 		6A5FE00925E1B19D001E0131 /* SShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5FE00825E1B19D001E0131 /* SShape.swift */; };
 		6A5FE00E25E1B204001E0131 /* ZShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5FE00D25E1B204001E0131 /* ZShape.swift */; };
+		6A5FE03825E1B656001E0131 /* TetrixGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5FE03725E1B656001E0131 /* TetrixGame.swift */; };
 		6ACD712825B4BAB000CA6F5E /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = 6ACD712725B4BAB000CA6F5E /* Sounds */; };
 		6ACD712D25B4BABB00CA6F5E /* Sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 6ACD712C25B4BABB00CA6F5E /* Sprites.atlas */; };
 		6ACD713225B4BCEB00CA6F5E /* Array2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACD713125B4BCEB00CA6F5E /* Array2D.swift */; };
@@ -69,6 +70,7 @@
 		6A5FE00325E1B118001E0131 /* JShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JShape.swift; sourceTree = "<group>"; };
 		6A5FE00825E1B19D001E0131 /* SShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SShape.swift; sourceTree = "<group>"; };
 		6A5FE00D25E1B204001E0131 /* ZShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZShape.swift; sourceTree = "<group>"; };
+		6A5FE03725E1B656001E0131 /* TetrixGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TetrixGame.swift; sourceTree = "<group>"; };
 		6ACD712725B4BAB000CA6F5E /* Sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sounds; sourceTree = "<group>"; };
 		6ACD712C25B4BABB00CA6F5E /* Sprites.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Sprites.atlas; sourceTree = "<group>"; };
 		6ACD713125B4BCEB00CA6F5E /* Array2D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array2D.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				6A5E3FC525B4B607005532BD /* GameScene.swift */,
 				6A5E3FC725B4B607005532BD /* GameViewController.swift */,
 				6A5E3FCE25B4B608005532BD /* Info.plist */,
+				6A5FE03725E1B656001E0131 /* TetrixGame.swift */,
 			);
 			path = TetrixGame;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				6A5E3FC625B4B607005532BD /* GameScene.swift in Sources */,
 				6A5FE00425E1B118001E0131 /* JShape.swift in Sources */,
 				6ACD713225B4BCEB00CA6F5E /* Array2D.swift in Sources */,
+				6A5FE03825E1B656001E0131 /* TetrixGame.swift in Sources */,
 				6A5FDFE725E1A354001E0131 /* Shape.swift in Sources */,
 				6A5FDFFA25E1AE73001E0131 /* LineShape.swift in Sources */,
 				6A5FE00925E1B19D001E0131 /* SShape.swift in Sources */,
