@@ -10,18 +10,26 @@ import GameplayKit
 
 class GameScene: SKScene {
     
+    // MARK: - Static properties
+    
     static let blockSize: CGFloat = 20.0
     static let tickLengthLevelOne = TimeInterval(600)
+    
+    // MARK: - Constants
     
     let gameLayer = SKNode()
     let shapeLayer = SKNode()
     let layerPosition = CGPoint(x: 6, y: -6)
+    
+    // MARK: - Variables
     
     var tick: (() -> ())?
     var tickLengthMilliseconds = tickLengthLevelOne
     var lastTick: Date?
     
     var textureCache = Dictionary<String, SKTexture>()
+    
+    // MARK: - Init
     
     required init(coder aDecoder: NSCoder) {
         fatalError("NSCoder not supported")
@@ -41,7 +49,8 @@ class GameScene: SKScene {
         addChild(gameLayer)
         
         let gameBoardTexture = SKTexture(imageNamed: "gameboard")
-        let gameBoard = SKSpriteNode(texture: gameBoardTexture, size: CGSize(width: GameScene.blockSize * CGFloat(TetrixGame.numberOfColumns), height: GameScene.blockSize * CGFloat(TetrixGame.numberOfRows)))
+        let gameBoard = SKSpriteNode(texture: gameBoardTexture, size: CGSize(width: GameScene.blockSize * CGFloat(TetrixGame.numberOfColumns),
+                                                                             height: GameScene.blockSize * CGFloat(TetrixGame.numberOfRows)))
         
         gameBoard.anchorPoint = CGPoint(x: 0, y: 1.0)
         gameBoard.position = layerPosition
@@ -51,6 +60,8 @@ class GameScene: SKScene {
         shapeLayer.addChild(gameBoard)
         gameLayer.addChild(shapeLayer)
     }
+    
+    // MARK: - Overrides
     
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
@@ -64,6 +75,8 @@ class GameScene: SKScene {
         }
     }
     
+    // MARK: - Public API
+    
     func startTicking() {
         
         lastTick = Date()
@@ -74,12 +87,9 @@ class GameScene: SKScene {
         lastTick = nil
     }
     
-    func pointForColumn(column: Int, row: Int) -> CGPoint {
+    func playSound(_ sound: String) {
         
-        let x = layerPosition.x + (CGFloat(column) * GameScene.blockSize) + (GameScene.blockSize / 2)
-        let y = layerPosition.y - ((CGFloat(row) * GameScene.blockSize) + (GameScene.blockSize / 2))
-        
-        return CGPoint(x: x, y: y)
+        run(SKAction.playSoundFileNamed(sound, waitForCompletion: false))
     }
     
     func addPreviewShapeToScene(shape: Shape, completion: @escaping () -> ()) {
@@ -167,17 +177,17 @@ class GameScene: SKScene {
                 let delay = (TimeInterval(columnIdx) * 0.05) + (TimeInterval(blockIdx) * 0.05)
                 let duration = TimeInterval(((sprite.position.y - newPosition.y) / GameScene.blockSize) * 0.1)
                 let moveAction = SKAction.move(to: newPosition, duration: duration)
+                
                 moveAction.timingMode = .easeOut
-                sprite.run(
-                    SKAction.sequence([
-                                        SKAction.wait(forDuration: delay),
-                        moveAction]))
+                sprite.run(SKAction.sequence([SKAction.wait(forDuration: delay), moveAction]))
                 longestDuration = max(longestDuration, duration + delay)
             }
         }
         
         for rowToRemove in linesToRemove {
+            
             for block in rowToRemove {
+                
                 let randomRadius = CGFloat(UInt(arc4random_uniform(400) + 100))
                 let goLeft = arc4random_uniform(100) % 2 == 0
                 
@@ -196,13 +206,21 @@ class GameScene: SKScene {
                 archAction.timingMode = .easeIn
                 let sprite = block.sprite!
                 sprite.zPosition = 100
-                sprite.run(
-                    SKAction.sequence(
-                        [SKAction.group([archAction, SKAction.fadeOut(withDuration: TimeInterval(randomDuration))]),
-                            SKAction.removeFromParent()]))
+                sprite.run(SKAction.sequence([SKAction.group([archAction, SKAction.fadeOut(withDuration: TimeInterval(randomDuration))]),
+                                              SKAction.removeFromParent()]))
             }
         }
         
         run(SKAction.wait(forDuration: longestDuration), completion:completion)
+    }
+    
+    // MARK: - Private API
+    
+    private func pointForColumn(column: Int, row: Int) -> CGPoint {
+        
+        let x = layerPosition.x + (CGFloat(column) * GameScene.blockSize) + (GameScene.blockSize / 2)
+        let y = layerPosition.y - ((CGFloat(row) * GameScene.blockSize) + (GameScene.blockSize / 2))
+        
+        return CGPoint(x: x, y: y)
     }
 }

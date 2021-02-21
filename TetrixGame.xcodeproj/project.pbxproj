@@ -134,6 +134,7 @@
 				6A5E3FC525B4B607005532BD /* GameScene.swift */,
 				6A5E3FC725B4B607005532BD /* GameViewController.swift */,
 				6A5E3FCE25B4B608005532BD /* Info.plist */,
+				6A5E3FC925B4B607005532BD /* Main.storyboard */,
 				6A5FE03725E1B656001E0131 /* TetrixGame.swift */,
 			);
 			path = TetrixGame;
@@ -177,7 +178,6 @@
 			children = (
 				6A5E3FBF25B4B607005532BD /* AppDelegate.swift */,
 				6A5E3FC325B4B607005532BD /* Actions.sks */,
-				6A5E3FC925B4B607005532BD /* Main.storyboard */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";

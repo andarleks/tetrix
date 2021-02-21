@@ -7,27 +7,31 @@
 
 protocol TetrixGameDelegate {
     
-    func gameDidEnd(tetrixGame: TetrixGame)
-    func gameDidBegin(tetrixGame: TetrixGame)
-    func gameShapeDidLand(tetrixGame: TetrixGame)
-    func gameShapeDidMove(tetrixGame: TetrixGame)
-    func gameShapeDidDrop(tetrixGame: TetrixGame)
-    func gameDidLevelUp(tetrixGame: TetrixGame)
+    func gameDidEnd(_ tetrixGame: TetrixGame)
+    func gameDidBegin(_ tetrixGame: TetrixGame)
+    func gameShapeDidLand(_ tetrixGame: TetrixGame)
+    func gameShapeDidMove(_ tetrixGame: TetrixGame)
+    func gameShapeDidDrop(_ tetrixGame: TetrixGame)
+    func gameDidLevelUp(_ tetrixGame: TetrixGame)
 }
 
 class TetrixGame {
     
+    // MARK: - Static properties
+    
     static let numberOfColumns = 10
     static let numberOfRows = 20
-    
     static let startingColumn = 4
     static let startingRow = 0
     
+    // MARK: - Constants
+    
     let pointsPerLine = 10
     let levelThreshold = 500
-    
     let previewColumn = 12
     let previewRow = 1
+    
+    // MARK: - Variables
     
     var blockArray: Array2D<Block>
     var nextShape: Shape?
@@ -36,6 +40,8 @@ class TetrixGame {
     
     var score = 0
     var level = 1
+    
+    // MARK: - Init
     
     init() {
         
@@ -46,6 +52,8 @@ class TetrixGame {
         blockArray = Array2D<Block>(columns: TetrixGame.numberOfColumns, rows: TetrixGame.numberOfRows)
     }
     
+    // MARK: - Public API
+    
     func beginGame() {
         
         if nextShape == nil {
@@ -53,15 +61,7 @@ class TetrixGame {
             nextShape = Shape.random(startingColumn: previewColumn, startingRow: previewRow)
         }
         
-        delegate?.gameDidBegin(tetrixGame: self)
-    }
-    
-    func endGame() {
-        
-        score = 0
-        level = 1
-        
-        delegate?.gameDidEnd(tetrixGame: self)
+        delegate?.gameDidBegin(self)
     }
     
     func newShape() -> (fallingShape: Shape?, nextShape: Shape?) {
@@ -80,50 +80,6 @@ class TetrixGame {
         }
         
         return (fallingShape, nextShape)
-    }
-    
-    func detectIllegalPlacement() -> Bool {
-        
-        guard let shape = fallingShape else { return false }
-        
-        for block in shape.blocks {
-            
-            if block.column < 0 || block.column >= TetrixGame.numberOfColumns || block.row < 0 || block.row >= TetrixGame.numberOfRows {
-                return true
-            } else if blockArray[block.column, block.row] != nil {
-                return true
-            }
-        }
-        
-        return false
-    }
-    
-    func settleShape() {
-        
-        guard let shape = fallingShape else { return }
-        
-        for block in shape.blocks {
-            blockArray[block.column, block.row] = block
-        }
-        
-        fallingShape = nil
-        
-        delegate?.gameShapeDidLand(tetrixGame: self)
-    }
-    
-    
-    func detectTouch() -> Bool {
-        
-        guard let shape = fallingShape else { return false }
-        
-        for bottomBlock in shape.bottomBlocks {
-            
-            if bottomBlock.row == TetrixGame.numberOfRows - 1 || blockArray[bottomBlock.column, bottomBlock.row + 1] != nil {
-                return true
-            }
-        }
-        
-        return false
     }
     
     func removeAllBlocks() -> Array<Array<Block>> {
@@ -182,7 +138,7 @@ class TetrixGame {
         
         if score >= level * levelThreshold {
             level += 1
-            delegate?.gameDidLevelUp(tetrixGame: self)
+            delegate?.gameDidLevelUp(self)
         }
         
         var fallenBlocks = Array<Array<Block>>()
@@ -226,7 +182,7 @@ class TetrixGame {
         
         shape.raiseShapeByOneRow()
         
-        delegate?.gameShapeDidDrop(tetrixGame: self)
+        delegate?.gameShapeDidDrop(self)
     }
     
     func letShapeFall() {
@@ -246,7 +202,7 @@ class TetrixGame {
             }
         } else {
             
-            delegate?.gameShapeDidMove(tetrixGame: self)
+            delegate?.gameShapeDidMove(self)
             
             if detectTouch() {
                 settleShape()
@@ -265,7 +221,7 @@ class TetrixGame {
             return
         }
         
-        delegate?.gameShapeDidMove(tetrixGame: self)
+        delegate?.gameShapeDidMove(self)
     }
     
     func moveShapeLeft() {
@@ -279,7 +235,7 @@ class TetrixGame {
             return
         }
         
-        delegate?.gameShapeDidMove(tetrixGame: self)
+        delegate?.gameShapeDidMove(self)
     }
     
     func moveShapeRight() {
@@ -293,6 +249,59 @@ class TetrixGame {
             return
         }
         
-        delegate?.gameShapeDidMove(tetrixGame: self)
+        delegate?.gameShapeDidMove(self)
+    }
+    
+    // MARK: - Private API
+    
+    private func endGame() {
+        
+        score = 0
+        level = 1
+        
+        delegate?.gameDidEnd(self)
+    }
+    
+    private func detectIllegalPlacement() -> Bool {
+        
+        guard let shape = fallingShape else { return false }
+        
+        for block in shape.blocks {
+            
+            if block.column < 0 || block.column >= TetrixGame.numberOfColumns || block.row < 0 || block.row >= TetrixGame.numberOfRows {
+                return true
+            } else if blockArray[block.column, block.row] != nil {
+                return true
+            }
+        }
+        
+        return false
+    }
+    
+    private func settleShape() {
+        
+        guard let shape = fallingShape else { return }
+        
+        for block in shape.blocks {
+            blockArray[block.column, block.row] = block
+        }
+        
+        fallingShape = nil
+        
+        delegate?.gameShapeDidLand(self)
+    }
+    
+    private func detectTouch() -> Bool {
+        
+        guard let shape = fallingShape else { return false }
+        
+        for bottomBlock in shape.bottomBlocks {
+            
+            if bottomBlock.row == TetrixGame.numberOfRows - 1 || blockArray[bottomBlock.column, bottomBlock.row + 1] != nil {
+                return true
+            }
+        }
+        
+        return false
     }
 }

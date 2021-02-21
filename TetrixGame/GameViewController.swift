@@ -7,14 +7,21 @@
 
 import UIKit
 import SpriteKit
-import GameplayKit
 
-class GameViewController: UIViewController, UIGestureRecognizerDelegate {
+class GameViewController: UIViewController {
+    
+    // MARK: - Properties
     
     var scene: GameScene!
     var tetrixGame: TetrixGame!
-    
     var panPointReference: CGPoint?
+    
+    // MARK: - IBOutlets
+    
+    @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var levelLabel: UILabel!
+    
+    // MARK: - Overrides
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +48,8 @@ class GameViewController: UIViewController, UIGestureRecognizerDelegate {
         
         return true
     }
+    
+    // MARK: - IBActions
     
     @IBAction func didTap(_ sender: UITapGestureRecognizer) {
         
@@ -73,6 +82,32 @@ class GameViewController: UIViewController, UIGestureRecognizerDelegate {
         tetrixGame.dropShape()
     }
     
+    // MARK: - Private API
+    
+    private func didTick() {
+        
+        tetrixGame.letShapeFall()
+    }
+    
+    private func nextShape() {
+        
+        let newShapes = tetrixGame.newShape()
+        
+        guard let fallingShape = newShapes.fallingShape else { return }
+        
+        scene.addPreviewShapeToScene(shape: newShapes.nextShape!, completion: {})
+        scene.movePreviewShape(shape: fallingShape) { [weak self] in
+            
+            self?.view.isUserInteractionEnabled = true
+            self?.scene.startTicking()
+        }
+    }
+}
+
+// MARK: - UIGestureRecognizerDelegate
+
+extension GameViewController: UIGestureRecognizerDelegate {
+    
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         
         return true
@@ -92,30 +127,16 @@ class GameViewController: UIViewController, UIGestureRecognizerDelegate {
         
         return false
     }
-    
-    func didTick() {
-        
-        tetrixGame.letShapeFall()
-    }
-    
-    func nextShape() {
-        
-        let newShapes = tetrixGame.newShape()
-        
-        guard let fallingShape = newShapes.fallingShape else { return }
-        
-        scene.addPreviewShapeToScene(shape: newShapes.nextShape!, completion: {})
-        scene.movePreviewShape(shape: fallingShape) { [weak self] in
-            
-            self?.view.isUserInteractionEnabled = true
-            self?.scene.startTicking()
-        }
-    }
 }
+
+// MARK: - TetrixGameDelegate
 
 extension GameViewController: TetrixGameDelegate {
     
-    func gameDidBegin(tetrixGame: TetrixGame) {
+    func gameDidBegin(_ tetrixGame: TetrixGame) {
+        
+        levelLabel.text = "\(tetrixGame.level)"
+        scoreLabel.text = "\(tetrixGame.score)"
         
         scene.tickLengthMilliseconds = GameScene.tickLengthLevelOne
         
@@ -129,34 +150,42 @@ extension GameViewController: TetrixGameDelegate {
         }
     }
     
-    func gameDidEnd(tetrixGame: TetrixGame) {
+    func gameDidEnd(_ tetrixGame: TetrixGame) {
         
         view.isUserInteractionEnabled = false
+        
         scene.stopTicking()
+        scene.playSound("Sounds/gameover.mp3")
         scene.animateCollapsingLines(linesToRemove: tetrixGame.removeAllBlocks(), fallenBlocks: tetrixGame.removeAllBlocks()) { [weak self] in
             self?.tetrixGame.beginGame()
         }
     }
     
-    func gameDidLevelUp(tetrixGame: TetrixGame) {
+    func gameDidLevelUp(_ tetrixGame: TetrixGame) {
+        
+        levelLabel.text = "\(tetrixGame.level)"
         
         if scene.tickLengthMilliseconds >= 100 {
             scene.tickLengthMilliseconds -= 100
         } else if scene.tickLengthMilliseconds > 50 {
             scene.tickLengthMilliseconds -= 50
         }
+        
+        scene.playSound("Sounds/levelup.mp3")
     }
     
-    func gameShapeDidDrop(tetrixGame: TetrixGame) {
+    func gameShapeDidDrop(_ tetrixGame: TetrixGame) {
         
         scene.stopTicking()
         scene.redrawShape(shape: tetrixGame.fallingShape!) { [weak self] in
             
             self?.tetrixGame.letShapeFall()
         }
+        
+        scene.playSound("Sounds/drop.mp3")
     }
     
-    func gameShapeDidLand(tetrixGame: TetrixGame) {
+    func gameShapeDidLand(_ tetrixGame: TetrixGame) {
         
         scene.stopTicking()
         
@@ -166,18 +195,22 @@ extension GameViewController: TetrixGameDelegate {
         
         if removedLines.linesRemoved.count > 0 {
             
+            scoreLabel.text = "\(tetrixGame.score)"
+            
             scene.animateCollapsingLines(linesToRemove: removedLines.linesRemoved, fallenBlocks:removedLines.fallenBlocks) { [weak self] in
                 
                 guard let self = self else { return }
                 
-                self.gameShapeDidLand(tetrixGame: self.tetrixGame)
+                self.gameShapeDidLand(self.tetrixGame)
             }
+            
+            scene.playSound("Sounds/bomb.mp3")
         } else {
             nextShape()
         }
     }
     
-    func gameShapeDidMove(tetrixGame: TetrixGame) {
+    func gameShapeDidMove(_ tetrixGame: TetrixGame) {
         
         scene.redrawShape(shape: tetrixGame.fallingShape!, completion: {})
     }
